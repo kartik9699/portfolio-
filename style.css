@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    padding: 10px;
+    height: 40px;
+    align-items: center;
+    background-color: rgb(253, 253, 253);
+    position: fixed;
+    top: 0;
+    
+}
+li{
+    list-style: none;
+    font-size: 20px;
+}
+ul{
+    display: flex;
+    justify-content: space-around;    
+}
+.nav_list{
+    width: 30%;
+}
+.logo{
+    font-size: 30px;
+    font-weight: bold;
+}
+.main{
+    
+    display: flex;
+    width:84vw;
+    height: calc(100vh - 30vh);
+    margin: 4vw;
+    box-shadow: 8px 8px 20px rgb(212, 211, 211), -4px -4px 12px  rgb(212, 211, 211);
+    margin: 8vw;
+    border: none;
+    border-radius: 25px;
+
+}
+.content ,.image{
+    width: 50%;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.image img{
+    width: 60%;
+    height: 60%;
+    
+    border-radius: 50%;
+    
+    
+}
+.projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,300px);
+    gap: 15px;
+    width: 70%;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.content p {
+    font-size: 30px;
+    
+}
+.content span{
+    font-size: 45px;
+    color: blue;
+}
+.btn button{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: white;
+    border: none;
+}
+.btn{
+    margin-top: 20px;
+}
+.btn1{
+    background-color: blue;
+}
+.btn2{
+    background-color: rgb(10, 10, 10);
+    
+}
+.btn2:hover{
+background-color: blue;
+}
+.btn1:hover{
+    background-color: rgb(10, 10, 10);
+    
+}
+.project{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    align-items: center;
+}
+.project1 ,.project2 ,.project3{
+    width: 100%;
+    height: 250px;
+    
+    border-radius: 25px;
+    padding: 10px;
+    box-shadow: 8px 8px 20px rgb(212, 211, 211), -4px -4px 12px  rgb(212, 211, 211);
+    
+    font-size: 30px;
+    color: rgb(5, 5, 5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+}
+.project1 button ,.project2 button ,.project3 button{
+width: 100px;
+height: 40px;
+border: none;
+color: white;
+background-color: black;
+border-radius: 10px;
+
+
+}
+h1{
+    font-size: 50px;
+}
+.skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100vw;
+}
+.skills ul{
+width: 50%;
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+gap: 20px;
+}
+.skills li{
+    width: 100px;
+    
+    background-color: rgb(0, 0, 0);
+    margin: 3px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+.skills li:hover{
+    width: 100px;
+
+    background-color: rgb(68, 22, 254);
+    
+}
+.project1 button:hover ,.project2 button:hover ,.project3 button:hover{
+    background-color: blue;
+}
+@media (max-width: 790px) {
+    .main{
+    
+        display: flex;
+        flex-direction: column-reverse;
+        width:84vw;
+        height: calc(100vh - 30vh);
+        box-shadow: 8px 8px 20px rgb(212, 211, 211), -4px -4px 12px  rgb(212, 211, 211);
+        margin: 20vw 8vw 10vw 10vw ;
+        padding-top: 5%;
+        border: none;
+        padding-bottom: 20%;
+        border-radius: 25px;
+        justify-content: center;
+        align-items: center;
+        
+    
+    }
+    .content ,.image{
+        width: 100%;
+        align-items: center;
+        height: 500%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    
+    }
+    
+}
