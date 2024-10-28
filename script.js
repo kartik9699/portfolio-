@@ -1,7 +1,21 @@
-function toggleMenu() {
-    const navbarLinks = document.getElementById('navbar-links');
-    navbarLinks.style.display = navbarLinks.style.display === 'flex' ? 'none' : 'flex';
+function menuShow() {
+  console.log("show");
+  let menu = document.getElementsByClassName('nav_list')[0];
+  menu.style.right = '0px';
+}
+
+function menuHide() {
+  console.log("hide");
+  let menu = document.getElementsByClassName('nav_list')[0];
+  menu.style.right = '-400px';
+}
+function navigateTo(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+      section.scrollIntoView({ behavior: 'easeInOut' });
   }
+}
+
   anime({
     targets: 'nav',
     translateY: [-100,0],
