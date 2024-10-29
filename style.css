@@ -37,7 +37,7 @@ ul{
     display: flex;
     width:84vw;
     height: calc(100vh - 30vh);
-    margin: 4vw;
+    
     box-shadow: 8px 8px 20px rgb(212, 211, 211), -4px -4px 12px  rgb(212, 211, 211);
     margin: 8vw;
     border: none;
@@ -57,9 +57,9 @@ ul{
     flex-direction: column;
 
 }
-.image{
+
     
-}
+
 .image img{
     width: 60%;
     height: 60%;    
@@ -205,21 +205,23 @@ gap: 20px;
 .contact{
 display: flex;
 align-items: center;
-
+width: 100vw;
 flex-direction: column; 
 }
 .contact_us{
     display: flex;
-    width: 50vw; 
-    justify-content: center; 
+    width: 50%; 
+    justify-content: center;
+    
     box-shadow: 8px 8px 10px gray,-5px -5px 10px gray;
-    margin: 10px;
+
 }
 .contact1 ,.contact2{
     width: 50%;
     display: flex;
     flex-direction: column;
-    padding: 50px;
+padding:50px
+    
 }
 .contact_us form{
     display: flex;
@@ -388,7 +390,7 @@ hr{
     text-align:left;
     }
     .footer .row a i{
-    margin:0% 3%;
+    margin:0%;
     }
     }
   @media (max-width: 790px) {
@@ -450,6 +452,14 @@ hr{
         padding: 5px;
         transition: 1000ms;
     }
+    .content p {
+        font-size: 25px;
+        
+    }
+    .content span{
+        font-size: 35px;
+        color: blue;
+    }
     .fa-xmark,.fa-bars{
     
         visibility: visible;
@@ -479,17 +489,41 @@ hr{
     }
 
     .contact_us{
-    width: 60vw;
+    width: 80vw;
    flex-direction: column-reverse;
    justify-content: center;
+   overflow: hidden;
 }
 .contact1{
     width: 80%;
-    padding: 50px;
+    padding: 60px;
 }
 .contact2{
     row-gap: 35px;
     width: 80%;
     padding: 50px;
 }
+}
+@media (max-width: 480px) {
+    
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .skills ul{
+        width: 75%;
+        }
+        .projects{
+            width: 100%;
+        }
+        .project1,.project2,.project3{
+            width: 100%;
+        }
+        textarea, .contact1 input {
+            width: 80%;
+            
+        }
+        
 }
