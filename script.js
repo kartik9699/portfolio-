@@ -1,29 +1,9 @@
-// Show and Hide Menu
-function menuShow() {
-  console.log("show");
-  let menu = document.getElementsByClassName('nav_list')[0];
-  menu.style.right = '0px';
-}
-
-function menuHide() {
-  console.log("hide");
-  let menu = document.getElementsByClassName('nav_list')[0];
-  menu.style.right = '-400px';
-}
-
-// Scroll to Section
-function navigateTo(sectionId) {
-  const section = document.getElementById(sectionId);
-  if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-
 // Function to trigger animations on scroll
 function triggerAnimationOnScroll(target, animationParams) {
   // Trigger the animation when the element comes into view
   anime({
     targets: target,
+    easing: 'easeOutQuad', // Smooth easing
     ...animationParams
   });
 }
@@ -37,46 +17,44 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      // Trigger specific animations for each section when it comes into view
+      // Element is in the viewport, let's trigger its animation
       if (entry.target.classList.contains('project')) {
         triggerAnimationOnScroll('.project', {
-          translateX: [-1000, 0],
-          duration: 3000,
-          delay: anime.stagger(100) // increase delay by 100ms for each element.
+          opacity: [0, 1], // Fade in effect
+          translateY: [50, 0], // Slide up effect
+          duration: 2000, // 1 second animation
+          delay: anime.stagger(100) // Staggered delay for each project element
         });
       } else if (entry.target.id === 'skills') {
         triggerAnimationOnScroll('#skills', {
-          scale: [
-            {value: .1, easing: 'easeOutSine', duration: 300},
-            {value: 1, easing: 'easeInOutQuad', duration: 1000}
-          ],
-          delay: anime.stagger(200, {grid: [14, 5], from: 'center'})
+          opacity: [0, 1], // Fade in effect
+          scale: [0.8, 1], // Scale up effect
+          duration: 2000,
+          easing: 'easeInOutQuad'
         });
       } else if (entry.target.id === 'pro') {
         triggerAnimationOnScroll('#pro', {
-          scale: [
-            {value: .1, easing: 'easeOutSine', duration: 0},
-            {value: 1, easing: 'easeInOutQuad', duration: 1000}
-          ],
-          delay: anime.stagger(0, {grid: [14, 5], from: 'center'})
+          opacity: [0, 1],
+          scale: [0.8, 1],
+          duration: 2000,
+          easing: 'easeInOutQuad'
         });
       } else if (entry.target.classList.contains('contact')) {
         triggerAnimationOnScroll('.contact', {
-          scale: [
-            {value: .1, easing: 'easeOutSine', duration: 0},
-            {value: 1, easing: 'easeInOutQuad', duration: 1000}
-          ],
-          delay: anime.stagger(0, {grid: [14, 5], from: 'center'})
+          opacity: [0, 1],
+          translateY: [50, 0], // Slide in from bottom
+          duration: 2000,
+          easing: 'easeOutQuad'
         });
       } else if (entry.target.classList.contains('about')) {
         triggerAnimationOnScroll('.about', {
-          scale: [
-            {value: .1, easing: 'easeOutSine', duration: 0},
-            {value: 1, easing: 'easeInOutQuad', duration: 1000}
-          ],
-          delay: anime.stagger(0, {grid: [14, 5], from: 'center'})
+          opacity: [0, 1],
+          translateY: [50, 0], // Slide in from bottom
+          duration: 2000,
+          easing: 'easeOutQuad'
         });
       }
+
       // Stop observing the element after the animation has started
       observer.unobserve(entry.target);
     }
@@ -87,15 +65,17 @@ const observer = new IntersectionObserver((entries, observer) => {
 const elementsToObserve = document.querySelectorAll('.project, #skills, #pro, .contact, .about');
 elementsToObserve.forEach(element => observer.observe(element));
 
-// Initial Animations on Page Load (these are still applied immediately on load)
+// Initial Animations on Page Load (optional, for any elements that should animate immediately)
 anime({
   targets: 'nav',
   translateY: [-100, 0],
-  duration: 3000
+  duration: 2000, // Smoother entrance for navigation
+  easing: 'easeOutQuad'
 });
 
 anime({
   targets: '.main',
   translateX: [-1000, 0],
-  duration: 10000
+  duration: 3000, // Smoother entrance for main content
+  easing: 'easeOutCubic'
 });

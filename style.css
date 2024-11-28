@@ -71,7 +71,8 @@ ul{
     visibility: hidden;
 }
 .projects{
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: repeat(auto-fit,300px);
     gap: 15px;
     width: 70%;
@@ -128,7 +129,7 @@ cursor: pointer;
 .project1 ,.project2 ,.project3{
     width: 100%;
     height: 250px;   
-    border-radius: 25px;
+    
     padding: 10px;
     box-shadow: 8px 8px 20px rgb(212, 211, 211), -4px -4px 12px  rgb(212, 211, 211);    
     font-size: 30px;
@@ -149,8 +150,8 @@ color: white;
 background-color: black;
 border-radius: 10px;
 position: absolute;
-bottom: 10%;
-left:35%;
+bottom: 5%;
+left:60%;
 }
 .github{
     position: absolute;
@@ -158,18 +159,25 @@ left:35%;
     left:50%;
 }
 .project img{
-    width: 100%;
-    height: 50%;
-    top:0px;
+    width: 40%;
+    height: 100%;
+    left:0px;
     position: absolute;
-border-top-left-radius: 25px;
-border-top-right-radius: 25px;
+
+
+}
+.project1 h4 ,.project2 h4 ,.project3 h4{
+position: absolute;
+font-size: 30px;
+top: 0%;
+left: 42%;
 }
 .project1 p ,.project2 p ,.project3 p{
-position: absolute;
-font-size: 40px;
-bottom: 30%;
-}
+    position: absolute;
+    font-size: 20px;
+    top: 10%;
+    left: 42%;
+    }
 h1{
     font-size: 50px;
 }
@@ -528,3 +536,24 @@ hr{
         }
         
 }
+/* Initially hide the content and move it slightly off-screen */
+.project, #skills, #pro, .contact, .about {
+    opacity: 0;              /* Hide content */
+    transform: translateY(50px); /* Move content slightly below the viewport */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition */
+  }
+  @media (max-width: 650px) {
+    .project1 h4 ,.project2 h4 ,.project3 h4{
+        position: absolute;
+        font-size: 25px;
+        top: 0%;
+        left: 42%;
+        }
+        .project1 p ,.project2 p ,.project3 p{
+            position: absolute;
+            font-size: 17px;
+            top: 10%;
+            left: 42%;
+            }
+    
+  }
