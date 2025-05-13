@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.loading-screen').style.opacity = '0';
     setTimeout(function() {
       document.querySelector('.loading-screen').style.display = 'none';
-    }, 500);
-  }, 1500);
+    }, 250);
+  }, 1000);
 
   // Theme Switcher
   const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
@@ -241,14 +241,7 @@ function addProcessedImage(container) {
 for (let i = 0; i < containers.length; i++) {
   addProcessedImage(containers[i]);
 }
-
-// Theme toggle
-// toggleBtn.onclick = () => {
-//   dark = !dark;
-//   document.body.style.backgroundColor = dark ? '#121212' : '#ffffff';
-//   document.body.style.color = dark ? '#fff' : '#000';
-// };
-  
+    
   });
 
 
