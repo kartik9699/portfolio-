@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
     easing: 'easeOutCubic',
     delay: 500
   });
-//   const imagePath = './Passport__1_-removebg-preview.png';
+// const imagePath = './Passport__1_-removebg-preview.png';
 // const containers = document.getElementsByClassName('image');
 // const toggleBtn = document.querySelector('.toggle');
 // let dark = true;
