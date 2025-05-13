@@ -243,22 +243,12 @@ for (let i = 0; i < containers.length; i++) {
 }
 
 // Theme toggle
-toggleBtn.onclick = () => {
-  dark = !dark;
-  document.body.style.backgroundColor = dark ? '#121212' : '#ffffff';
-  document.body.style.color = dark ? '#fff' : '#000';
-};
-
-  function openLink(appUrl, webUrl) {
-    // Try to open in app
-    window.location.href = appUrl;
-
-    // Fallback to web after 1.5 seconds
-    setTimeout(() => {
-      window.location.href = webUrl;
-    }, 1500);
-  }
-    
+// toggleBtn.onclick = () => {
+//   dark = !dark;
+//   document.body.style.backgroundColor = dark ? '#121212' : '#ffffff';
+//   document.body.style.color = dark ? '#fff' : '#000';
+// };
+  
   });
 
 
