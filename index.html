@@ -1,148 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Kartik Parab's Portfolio - Web Developer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Kartik Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Kartik Parab | Web Developer</title>
   </head>
   <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
     <nav>
-      <div class="logo">Kartik Parab</div>
-      <div id="navbar-links" onclick="menuShow()"><i class="fa fa-bars"></i> </div>
-      <div class="nav_list">
-        <i class="fa-solid fa-xmark" onclick="menuHide()"></i>
-        <ul>
-          <a href="#project" onclick="navigateTo('project')"><li>Projects</li></a>
-          <a href="#skills" onclick="navigateTo('skills')"><li>Skills</li></a>
-          <a href="#about" onclick="navigateTo('about')"><li>About</li></a>
-          <a href="#contact" onclick="navigateTo('contact')"><li>Contact</li></a>
-        </ul>
+      <div class="nav-container">
+        <div class="logo">Kartik Parab</div>
+        <div id="navbar-links" class="menu-toggle" onclick="menuShow()">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div class="nav_list">
+          <i class="fa-solid fa-xmark" onclick="menuHide()"></i>
+          <ul>
+            <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+            <li><a href="#project" onclick="navigateTo('project')">Projects</a></li>
+            <li><a href="#skills" onclick="navigateTo('skills')">Skills</a></li>
+            <li><a href="#about" onclick="navigateTo('about')">About</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact')">Contact</a></li>
+            <li>
+              <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <div class="slider round"></div>
+                </label>
+                <span id="theme-text">Light Mode</span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    <div class="main">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="main">
         <div class="content">
-            <p>Hello, I'm <span>Kartik</span>.</p>
-            <p>I'm <span>Web Developer</span>.</p>
-            <div class="btn">
-                <a href="https://black-lari-27.tiiny.site/"><button class="btn1">Download CV</button></a>
-                <a href=""><button class="btn2">Hire Me</button></a>
-            </div>
+          <h1>Hello, I'm <span>Kartik</span>.</h1>
+          <p class="typing-text">I'm a <span id="typed-text"></span></p>
+          <div class="btn">
+            <a href="resume.pdf" download="Kartik_Parab_Resume.pdf" class="btn-link"><button class="btn1">Download CV</button></a>
+            <a href="#contact" class="btn-link"><button class="btn2">Hire Me</button></a>
+          </div>
+          <div class="social-icons">
+            <a href="http://www.linkedin.com/in/kartik-parab-37186327b" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/kartik9699" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/?hl=en" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@404_error-f7w" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
         </div>
         <div class="image">
-            <img src="./Passport__1_-removebg-preview.png" alt="">
+          <img src="./Passport__1_-removebg-preview.png" alt="Kartik Parab" loading="lazy">
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="project" id="project">
+    <!-- Projects Section -->
+    <section class="project" id="project">
       <h1>Projects</h1>
       <div class="projects">
-        <div class="project1" id="pro">
-          <img src="./Screenshot 2024-10-28 093902.png" alt="">
-          <h4>Foodie Website</h4>
-          <p>Developed a MERN stack food delivery website with React Hooks for state management, JWT authentication, a RESTful API for order processing, and MongoDB for high-performance data handling, ensuring scalability and a responsive user experience.</p>
-          <a href="https://github.com/kartik9699/Foodie"><button class="github">GitHub Link</button></a>
+        <div class="project-card" id="pro">
+          <!-- <div class="project-image">
+            <img src="./Screenshot 2024-10-28 093902.png" alt="Foodie Website" loading="lazy">
+          </div> -->
+          <div class="project-content">
+            <h4>Foodie Website</h4>
+            <p>Developed a MERN stack food delivery website with React Hooks for state management, JWT authentication, a RESTful API for order processing, and MongoDB for high-performance data handling, ensuring scalability and a responsive user experience.</p>
+            <div class="project-links">
+              <a href="https://github.com/kartik9699/Foodie" class="github-link"><i class="fab fa-github"></i> Code</a>
+              <!-- <a href="#" class="live-demo">Live Demo</a> -->
+            </div>
+            <div class="tech-tags">
+              <span>MERN</span>
+              <span>React</span>
+              <span>JWT</span>
+            </div>
+          </div>
         </div>
-        <div class="project1" id="pro">
-          <img src="./Screenshot 2024-10-28 092425.png" alt="">
-          <h4>Home Services</h4>
-          <p>A PHP-based home services platform connects homeowners with service providers for tasks like plumbing, electrical work, cleaning, and landscaping, allowing users to request quotes and schedule appointments.</p>
-          <a href="https://github.com/kartik9699/Home-services-PHP"><button class="github">GitHub Link</button></a>
-        </div>
-        <div class="project1" id="pro">
-          <img src="./Screenshot 2024-10-28 093445.png" alt="">
-          <h4>Pets Adoptions</h4>
-          <p>A PHP-based pet adoption web app connects users to available pets, allowing them to filter by species, age, and location, and interact with adoption agencies or individuals.</p>
-          <a href="https://github.com/kartik9699/Pets-Adoption"><button class="github">GitHub Link</button></a>
-        </div>
-        <div class="project1" id="pro">
-          <img src="./Screenshot 2024-11-28 124041.png" alt="">
-          <h4>Tic-Tac-Toe</h4>
-          <p>Tic Tac is an engaging mobile game where players take turns marking X's and O's on a grid, aiming to align three in a row to win.</p>
-          <a href="https://github.com/kartik9699/tic-tac-toe"><button class="github">GitHub Link</button></a>
-        </div>
-        <div class="project1" id="pro">
-          <img src="./Screenshot 2024-10-31 144820.png" alt="">
-          <h4>calculator</h4>
-          <p>A simple calculator application that performs basic arithmetic operations like addition, subtraction, multiplication, and division.</p>
-          <a href="https://github.com/kartik9699/Calculator"><button class="github">GitHub Link</button></a>
-        </div>
-      </div>
-    </div>
 
-    <div class="skills" id="skills">
-      <h1>Skills</h1>
-      <ul>
-        <li id="skills">HTML</li>
-        <li id="skills">CSS</li>
-        <li id="skills">JavaScript</li>
-        <li id="skills">PHP</li>
-        <li id="skills">MySQL</li>
-        <li id="skills">MongoDB</li>
-        <li id="skills">Python</li>
-        <li id="skills">React</li>
-        <li id="skills">Node</li>
-        <li id="skills">Express</li>
-      </ul>
-    </div>
-
-    <div class="about" id="about">
-      <h1>About</h1>
-      <div class="about-us">
-        <p>I'm a passionate web developer specializing in creating responsive, user-focused websites and applications. With expertise in HTML, CSS, JavaScript, and various frameworks, I bring ideas to life on the web. I thrive on solving challenges, continuously learning, and delivering impactful digital solutions. Let’s connect to build something amazing together!</p>
-      </div>
-    </div>
-
-    <div class="contact" id="contact">
-      <h1>Contact Us</h1>
-      <div class="contact_us">
-        <div class="contact1">
-          <h2>Send us a message</h2>
-          <form action="">
-            <input type="text" placeholder="Name">
-            <input type="text" placeholder="Email">
-            <input type="text" placeholder="Subject">
-            <input type="text" placeholder="Message">
-            <input type="submit" id="submit" value="Send Message">
-          </form>
+        <div class="project-card" id="pro">
+          <!-- <div class="project-image">
+            <img src="./Screenshot 2024-10-28 092425.png" alt="Home Services" loading="lazy">
+          </div> -->
+          <div class="project-content">
+            <h4>Home Services</h4>
+            <p>A PHP-based home services platform connects homeowners with service providers for tasks like plumbing, electrical work, cleaning, and landscaping, allowing users to request quotes and schedule appointments.</p>
+            <div class="project-links">
+              <a href="https://github.com/kartik9699/Home-services-PHP" class="github-link"><i class="fab fa-github"></i> Code</a>
+              <!-- <a href="#" class="live-demo">Live Demo</a> -->
+            </div>
+            <div class="tech-tags">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Bootstrap</span>
+            </div>
+          </div>
         </div>
-        <div class="contact2">
-          <div><h2>Contact Us</h2><hr></div>
-          <p><i class="fa-solid fa-location-crosshairs"></i> Yashwant Park, Near St. Xavier School, Tirupati Nagar, Virar (West)</p>
-          <p><i class="fa-solid fa-phone"></i> +91-9699XXXXXX</p>
-          <p><i class="fa-regular fa-envelope"></i> kartikparab300@gmail.com</p>
-          <div class="icon">
-            <a href="http://www.linkedin.com/in/kartik-parab-37186327b"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/kartik9699"><i class="fa-brands fa-github"></i></a>
-            <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@404_error-f7w"><i class="fa-brands fa-youtube"></i></a>
+
+        <div class="project-card" id="pro">
+          <!-- <div class="project-image">
+            <img src="./Screenshot 2024-10-28 093445.png" alt="Pets Adoptions" loading="lazy">
+          </div> -->
+          <div class="project-content">
+            <h4>Pets Adoptions</h4>
+            <p>A PHP-based pet adoption web app connects users to available pets, allowing them to filter by species, age, and location, and interact with adoption agencies or individuals.</p>
+            <div class="project-links">
+              <a href="https://github.com/kartik9699/Pets-Adoption" class="github-link"><i class="fab fa-github"></i> Code</a>
+              <!-- <a href="#" class="live-demo">Live Demo</a> -->
+            </div>
+            <div class="tech-tags">
+              <span>PHP</span>
+              <span>JavaScript</span>
+              <span>Boostrap</span>
+              <span>HTML5</span>
+              <span>CSS</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <footer>
-      <div class="footer">
-        <div class="icon">
-          <a href="http://www.linkedin.com/in/kartik-parab-37186327b"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/kartik9699"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.instagram.com/?hl=en"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@404_error-f7w"><i class="fa-brands fa-youtube"></i></a>
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+      <h1>Skills</h1>
+      <div class="skills-container">
+        <div class="skills-category">
+          <h3>Frontend</h3>
+          <div class="skills-list">
+            <div class="skill-item" data-percent="90">
+              <span>HTML</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+            <div class="skill-item" data-percent="80">
+              <span>CSS</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+            <div class="skill-item" data-percent="75">
+              <span>JavaScript</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+            <div class="skill-item" data-percent="70">
+              <span>React</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+          </div>
         </div>
-        <div class="row">
-          <ul>
-            <a href="#project" onclick="navigateTo('project')"><li>Projects</li></a>
-            <a href="#skills" onclick="navigateTo('skills')"><li>Skills</li></a>
-            <a href="#about" onclick="navigateTo('about')"><li>About</li></a>
-            <a href="#contact" onclick="navigateTo('contact')"><li>Contact</li></a>
-          </ul>
+
+        <div class="skills-category">
+          <h3>Backend</h3>
+          <div class="skills-list">
+            <div class="skill-item" data-percent="70">
+              <span>Node.js</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+            <div class="skill-item" data-percent="70">
+              <span>Express</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+            <div class="skill-item" data-percent="80">
+              <span>PHP</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>Database</h3>
+          <div class="skills-list">
+            <div class="skill-item" data-percent="85">
+              <span>MySQL</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+            <div class="skill-item" data-percent="70">
+              <span>MongoDB</span>
+              <div class="skill-bar">
+                <div class="skill-progress"></div>
+              </div>
+              <span class="progress-text"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <h1>About Me</h1>
+      <div class="about-container">
+        <div class="about-content">
+          <div class="about-text">
+            <p>I'm a passionate web developer specializing in creating responsive, user-focused websites and applications. With expertise in HTML, CSS, JavaScript, and various frameworks, I bring ideas to life on the web.</p>
+            <p>I thrive on solving challenges, continuously learning, and delivering impactful digital solutions. Let's connect to build something amazing together!</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <div class="stat-number" data-count="10">3</div>
+              <div class="stat-text">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="5">0</div>
+              <div class="stat-text">Happy Clients</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-count="3">1</div>
+              <div class="stat-text">Years Experience</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="./Passport__1_-removebg-preview.png" alt="Kartik Parab" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h1>Contact Me</h1>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-details">
+            <h2>Get In Touch</h2>
+            <hr>
+            <!-- <p><i class="fa-solid fa-location-dot"></i> Yashwant Park, Near St. Xavier School, Tirupati Nagar, Virar (West)</p> -->
+            <p><i class="fa-solid fa-phone"></i> +91-9699252953</p>
+            <p><i class="fa-regular fa-envelope"></i> kartikparab300@gmail.com</p>
+          </div>
+          <div class="social-links">
+            <a href="http://www.linkedin.com/in/kartik-parab-37186327b" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/kartik9699" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/?hl=en" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@404_error-f7w" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">Kartik Parab</div>
+          <div class="footer-links">
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#project">Projects</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <a href="http://www.linkedin.com/in/kartik-parab-37186327b" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/kartik9699" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/?hl=en" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@404_error-f7w" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> Kartik Parab. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="script.js"></script>
   </body>
 </html>
