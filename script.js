@@ -203,53 +203,61 @@ document.addEventListener('DOMContentLoaded', function() {
     easing: 'easeOutCubic',
     delay: 500
   });
-// const imagePath = './Passport__1_-removebg-preview.png';
-// const containers = document.getElementsByClassName('image');
-// const toggleBtn = document.querySelector('.toggle');
-// let dark = true;
+const imagePath = './Passport__1_-removebg-preview.png';
+const containers = document.getElementsByClassName('image');
+const toggleBtn = document.querySelector('.toggle');
+let dark = true;
 
-// // Function to create a canvas and draw processed image
-// function addProcessedImage(container) {
-//   const canvas = document.createElement('canvas');
-//   const ctx = canvas.getContext('2d');
+// Function to create a canvas and draw processed image
+function addProcessedImage(container) {
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
 
-//   const img = new Image();
-//   img.crossOrigin = "anonymous";
-//   img.src = imagePath;
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.src = imagePath;
 
-//   img.onload = () => {
-//     canvas.width = img.width;
-//     canvas.height = img.height;
-//     ctx.drawImage(img, 0, 0);
+  img.onload = () => {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
 
-//     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-//     const data = imageData.data;
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
 
-//     for (let i = 0; i < data.length; i += 4) {
-//       const r = data[i], g = data[i + 1], b = data[i + 2];
-//       if (r > 230 && g > 230 && b > 230) {
-//         data[i + 3] = 0;
-//       }
-//     }
+    for (let i = 0; i < data.length; i += 4) {
+      const r = data[i], g = data[i + 1], b = data[i + 2];
+      if (r > 230 && g > 230 && b > 230) {
+        data[i + 3] = 0;
+      }
+    }
 
-//     ctx.putImageData(imageData, 0, 0);
-//     container.appendChild(canvas); // ✅ Append only after processing
-//   };
-// }
+    ctx.putImageData(imageData, 0, 0);
+    container.appendChild(canvas); // ✅ Append only after processing
+  };
+}
 
-// // Loop through all containers with class "image" and add a processed image
-// for (let i = 0; i < containers.length; i++) {
-//   addProcessedImage(containers[i]);
-// }
+// Loop through all containers with class "image" and add a processed image
+for (let i = 0; i < containers.length; i++) {
+  addProcessedImage(containers[i]);
+}
 
-// // Theme toggle
-// toggleBtn.onclick = () => {
-//   dark = !dark;
-//   document.body.style.backgroundColor = dark ? '#121212' : '#ffffff';
-//   document.body.style.color = dark ? '#fff' : '#000';
-// };
+// Theme toggle
+toggleBtn.onclick = () => {
+  dark = !dark;
+  document.body.style.backgroundColor = dark ? '#121212' : '#ffffff';
+  document.body.style.color = dark ? '#fff' : '#000';
+};
 
-  
+  function openLink(appUrl, webUrl) {
+    // Try to open in app
+    window.location.href = appUrl;
+
+    // Fallback to web after 1.5 seconds
+    setTimeout(() => {
+      window.location.href = webUrl;
+    }, 1500);
+  }
     
   });
 

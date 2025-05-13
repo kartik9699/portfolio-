@@ -278,9 +278,19 @@ input:checked + .slider:before {
 }
 
 .image {
-  flex: 1;
+  width: 100%;
+  max-width: 400px; /* Or any preferred max width */
+  margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.image canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
 }
 
 .image img {
