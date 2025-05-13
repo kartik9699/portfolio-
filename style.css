@@ -279,7 +279,7 @@ input:checked + .slider:before {
 
 .image {
   width: 100%;
-  max-width: 400px; /* Or any preferred max width */
+  max-width: 500px; /* Or any preferred max width */
   margin: auto;
   display: flex;
   justify-content: center;
@@ -527,7 +527,6 @@ section h1::after {
 
 .progress-text {
   font-size: 14px;
-  color: #000;
   min-width: 30px;
 }
 
