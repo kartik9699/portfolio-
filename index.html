@@ -15,7 +15,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav>
+    <nav class="hidden">
       <div class="nav-container">
         <div class="logo">Kartik Parab</div>
         <div id="navbar-links" class="menu-toggle" onclick="menuShow()">
@@ -45,15 +45,15 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-      <div class="main">
+      <div class="main hidden">
         <div class="content">
           <h1>Hello, I'm <span>Kartik</span>.</h1>
           <p class="typing-text">I'm a <span id="typed-text"></span></p>
-          <div class="btn">
+          <div class="btn hidden">
             <a href="resume.pdf" download="Kartik_Parab_Resume.pdf" class="btn-link"><button class="btn1">Download CV</button></a>
             <a href="#contact" class="btn-link"><button class="btn2">Hire Me</button></a>
           </div>
-          <div class="social-icons">
+          <div class="social-icons hidden">
             <!-- LinkedIn -->
 <a href="https://www.linkedin.com/in/kartik-parab-37186327b" 
    aria-label="LinkedIn Profile">
@@ -84,7 +84,7 @@
 
           </div>
         </div>
-        <div class="image">
+        <div class="image hidden" style="transition-delay: 0.6s">
          
         </div>
       </div>
@@ -92,13 +92,29 @@
 
     <!-- Projects Section -->
     <section class="project" id="project">
-      <h1>Projects</h1>
+      <h1 class="section-title hidden">Projects</h1>
       <div class="projects">
-        <div class="project-card" id="pro">
+        <div class="project-card hidden" id="pro">
          
           <div class="project-content">
             <h4>Foodie Website</h4>
             <p>Developed a MERN stack food delivery website with React Hooks for state management, JWT authentication, a RESTful API for order processing, and MongoDB for high-performance data handling, ensuring scalability and a responsive user experience.</p>
+            <div class="project-links">
+              <a href="https://github.com/kartik9699/Foodie" class="github-link"><i class="fab fa-github"></i> Code</a>
+              
+            </div>
+            <div class="tech-tags">
+              <span>MERN</span>
+              <span>React</span>
+              <span>JWT</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card hidden" id="pro">
+         
+          <div class="project-content">
+            <h4>Book Reviewer</h4>
+            <p>Developed a MERN stack Book Reviewer System using React Hooks for dynamic state management, JWT for secure user authentication, and a RESTful API for managing reviews, ratings, and user data. Integrated MongoDB for efficient and scalable data storage, delivering a responsive and seamless user experience across all devices.</p>
             <div class="project-links">
               <a href="https://github.com/kartik9699/Foodie" class="github-link"><i class="fab fa-github"></i> Code</a>
               
@@ -144,6 +160,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </section>
 
